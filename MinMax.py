@@ -14,9 +14,6 @@ def max(*args, **kwargs):
     for i in range(len(args)):
         if(args[i]>maximum):
            maximum = args[i]
-
-
-
     return maximum
 
 

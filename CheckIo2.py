@@ -5,6 +5,7 @@ def say_hi(name, age):
     return "Hi. My name is " + name + " and I'm " + str(age) + " years old"
 
 
+#####################################################
 def correct_sentence(text: str) -> str:
     """
         returns a corrected sentence which starts with a capital letter
@@ -17,6 +18,7 @@ def correct_sentence(text: str) -> str:
     return text
 
 
+#######################################################
 def first_word(text: str) -> str:
     """
         returns the first word in a given text
@@ -25,23 +27,21 @@ def first_word(text: str) -> str:
     return word.group(0)
 
 
+################################################################
 def second_index(text: str, symbol: str):
     """
         returns the second index of a symbol in a given text
     """
+    second_ind = text.replace(symbol, "", 1).find(symbol) + 1
+    if second_ind == 0:
+        return
+    return second_ind
+
+
+#####################################################################
+def between_markers(text: str, begin: str, end: str) -> str:
+    """
+        returns substring between two given markers
+    """
     # your code here
-    # index = 0
-    # count = 0
-    # for ch in text:
-    #     print(ch)
-    #     if ch == symbol:
-    #         count += 1
-    #         if count == 1:
-    #             return index
-    if symbol in text:
-        print(symbol)
-        print(text.index(symbol))
-    return 0
-
-
-print(second_index("Hello world", "o"))
+    return ''

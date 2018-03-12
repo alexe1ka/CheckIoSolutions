@@ -293,6 +293,5 @@ def calc_column_index(position):
         saver2 = 0
     return saver1, saver2
 
-
 # print(calc_column_index('b3'))
-#print(safe_pawns(["a8", "b7", "c6", "d5", "e4", "f3", "g2", "h1"]))
+# print(safe_pawns(["a8", "b7", "c6", "d5", "e4", "f3", "g2", "h1"]))
