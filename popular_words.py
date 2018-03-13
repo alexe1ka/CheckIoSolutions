@@ -1,7 +1,15 @@
-def popular_words(text, words):
+def popular_words(text, words) -> dict:
     # your code here
-
+    result_dict = dict.fromkeys(words)
+    print(result_dict)
+    for word in words:
+        print(word_in_current_text_calculator(text, word))
+        print("result dict: " + result_dict)
     return None
+
+
+def word_in_current_text_calculator(text: str, word: str) -> int:
+    return text.lower().count(word.lower())
 
 
 if __name__ == '__main__':
