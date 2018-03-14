@@ -1,11 +1,9 @@
 def popular_words(text, words) -> dict:
     # your code here
     result_dict = dict.fromkeys(words)
-    print(result_dict)
     for word in words:
-        print(word_in_current_text_calculator(text, word))
-        print("result dict: " + result_dict)
-    return None
+        result_dict[word] = word_in_current_text_calculator(text, word)
+    return result_dict
 
 
 def word_in_current_text_calculator(text: str, word: str) -> int:
