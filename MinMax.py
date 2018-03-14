@@ -1,5 +1,4 @@
 # *args - словарь,*kwargs - список
-
 def min(*args, **kwargs):
     key = kwargs.get("key", None)
 
@@ -9,11 +8,16 @@ def min(*args, **kwargs):
 
 def max(*args, **kwargs):
     key = kwargs.get("key", None)
-    
+    print(len(args))
+    if args[0] is str:
+        print("args is string")
+    else:
+        "no"
     maximum = args[0]
+    print(maximum)
     for i in range(len(args)):
-        if(args[i]>maximum):
-           maximum = args[i]
+        if (args[i] > maximum):
+            maximum = args[i]
     return maximum
 
 
