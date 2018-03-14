@@ -3,13 +3,11 @@ from typing import List, Any
 
 def all_the_same(elements: List[Any]) -> bool:
     # your code here
-    print(len(set(elements)))
-    return
+    return True if len(set(elements)) <= 1 else False
 
 
 if __name__ == '__main__':
     print("Example:")
-    print(all_the_same([1, 1, 1]))
 
     # These "asserts" are used for self-checking and not for an auto-testing
     assert all_the_same([1, 1, 1]) == True
