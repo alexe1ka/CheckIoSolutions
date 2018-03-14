@@ -3,7 +3,7 @@ def bigger_price(limit, data):
         TOP most expensive goods
     """
     # your code here
-    return None
+    return sorted(data, key=lambda good: good["price"], reverse=True)[0:limit]
 
 
 if __name__ == '__main__':
