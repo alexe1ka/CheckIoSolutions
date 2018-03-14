@@ -3,21 +3,17 @@ def most_frequent(data):
         determines the most frequently occurring string in the sequence.
     """
     # your code here
-
-    print(data)
-    for string in data:
-        count = len(remove_all_current_elements_from_list(data, string))
-        print(count)
-
-    # return None
+    result_dict = dict.fromkeys(set(data))
+    for string in set(data):
+        result_dict[string] = count_current_element_in_list(data, string)
+    return max(result_dict.keys(), key=(lambda k: result_dict[k]))
 
 
-def remove_all_current_elements_from_list(data_list: list, current_element: str) -> list:
-    if len(data_list) is 1:
-        return data_list
+def count_current_element_in_list(data_list: list, current_element: str) -> int:
+    len_start_list = len(data_list)
     while current_element in data_list:
         data_list.remove(current_element)
-    return data_list
+    return len_start_list - len(data_list)
 
 
 if __name__ == '__main__':
