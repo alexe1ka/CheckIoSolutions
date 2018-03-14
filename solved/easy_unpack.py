@@ -3,7 +3,7 @@ def easy_unpack(elements):
         returns a tuple with 3 elements - first, third and second to the last
     """
     # your code here
-    return ()
+    return elements[0], elements[2], elements[len(elements) - 2]
 
 
 if __name__ == '__main__':
