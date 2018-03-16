@@ -2,11 +2,11 @@ import re
 
 
 def fizz_buzz(number):
-    if ((number % 5 == 0) and (number % 3 == 0)):
+    if (number % 5 == 0) and (number % 3 == 0):
         return "Fizz Buzz"
-    elif (number % 5 == 0):
+    elif number % 5 == 0:
         return "Buzz"
-    elif (number % 3 == 0):
+    elif number % 3 == 0:
         return "Fizz"
     else:
         print(number)
@@ -22,16 +22,15 @@ def index_power(array, n):
     """
         Find Nth power of the element with index N.
     """
-    if (n > len(array) - 1):
+    if n > len(array) - 1:
         return -1
     else:
         return array[n] ** n
-    return None
 
 
 ##########################
-def evenTheLast(array):
-    if (len(array) != 0):
+def even_the_last(array):
+    if len(array) != 0:
         evenArr = []
         evenArr = array[::2]
         evenSum = sum(evenArr)
