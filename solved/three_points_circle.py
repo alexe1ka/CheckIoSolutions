@@ -4,22 +4,22 @@ import math
 def checkio(data):
     # replace this for solution
     lst_data = eval("(%s)" % data)
-    # print("lst_data: {}".format(lst_data))
-    # lst_data = sorted(lst_data, key=lambda point: point[0])
-    # print("Sorted list data: {}".format(lst_data))
+
+    if lst_data[0][0] == lst_data[1][0] or lst_data[1][0] == lst_data[2][0]:
+        lst_data = sorted(lst_data, key=lambda point: point[1])
+
+    print("lst_data: {}".format(lst_data))
 
     m_a = k_calculate(lst_data[0], lst_data[1])
     m_b = k_calculate(lst_data[1], lst_data[2])
     x = calc_x(m_a, m_b, lst_data[0], lst_data[1], lst_data[2])
     y = calc_y(lst_data[0], lst_data[1], lst_data[2], x)
 
-    # y_b = calc_y(lst_data[1], lst_data[2], x)
-    # print("y_a = {}, y_b = {}".format(y, y_b))
     r = (radius_calc([x, y], lst_data[0]))
     return "(x-{})^2+(y-{})^2={}^2" \
-        .format(round(x, 2) if not x.is_integer() else round(x),
-                round(y, 2) if not y.is_integer() else round(y),
-                round(r, 2) if not r.is_integer() else round(r))
+        .format(round(x, 2) if not round(x, 2).is_integer() else round(x.__int__()),
+                round(y, 2) if not round(y, 2).is_integer() else round(y.__int__()),
+                round(r, 2) if not round(r, 2).is_integer() else round(r.__int__()))
 
 
 def calc_x(m_a, m_b, point1, point2, point3):
@@ -34,8 +34,6 @@ def calc_x(m_a, m_b, point1, point2, point3):
 
 
 def calc_y(point1: list, point2: list, point3: list, x: int) -> float:
-    # print("k_calc = {}".format(k_calculate(point1, point2)))
-    # print("result = {}".format((point1[1] + point2[1]) / 2))
     try:
         return (-(1 / k_calculate(point1, point2))
                 * (x - ((point1[0] + point2[0]) / 2))) \
@@ -73,3 +71,6 @@ if __name__ == '__main__':
 
     print(checkio("(7,3),(9,6),(3,6)"))
     assert checkio("(7,3),(9,6),(3,6)") == "(x-6)^2+(y-5.83)^2=3^2"
+
+    print(checkio("(9,8),(9,4),(3,6)"))
+    assert checkio("(9,8),(9,4),(3,6)") == "(x-6.33)^2+(y-6)^2=3.33^2"
