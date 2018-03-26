@@ -63,7 +63,7 @@ def three_words(words):
 
 ###############################
 def min_max_difference(*args):
-    if (len(args) != 0):
+    if len(args) != 0:
         maxim = args[0]
         minim = args[0]
         for n in args:
@@ -71,7 +71,7 @@ def min_max_difference(*args):
                 maxim = n
             if n < minim:
                 minim = n
-        if ((float)(maxim - minim).is_integer()):
+        if (float)(maxim - minim).is_integer():
             return int(maxim - minim)
         else:
             res = format(((float)(maxim - minim)), '.4f')
@@ -118,7 +118,7 @@ def absolute_sorting(numbers_array):
 def non_inique_elements(data):
     list_data = list(data)
     for i in data:
-        if (list_data.count(i) == 1):
+        if list_data.count(i) == 1:
             list_data.remove(i)
     return list_data
 
@@ -230,35 +230,35 @@ def safe_pawns(pawns):
 
     for pos in pawns_list:
         savers = calc_saver(pos)
-        if (pawns.__contains__(savers[0]) or pawns.__contains__(savers[1])):
+        if pawns.__contains__(savers[0]) or pawns.__contains__(savers[1]):
             save_counter += 1
     return save_counter
 
 
 def calc_saver(position):
     savers = []
-    if (position[1] == '1'):
+    if position[1] == '1':
         savers = calc_column_index(position)
 
-    elif (position[1] == '2'):
+    elif position[1] == '2':
         savers = calc_column_index(position)
 
-    elif (position[1] == '3'):
+    elif position[1] == '3':
         savers = calc_column_index(position)
 
-    elif (position[1] == '4'):
+    elif position[1] == '4':
         savers = calc_column_index(position)
 
-    elif (position[1] == '5'):
+    elif position[1] == '5':
         savers = calc_column_index(position)
 
-    elif (position[1] == '6'):
+    elif position[1] == '6':
         savers = calc_column_index(position)
 
-    elif (position[1] == '7'):
+    elif position[1] == '7':
         savers = calc_column_index(position)
 
-    elif (position[1] == '8'):
+    elif position[1] == '8':
         savers = calc_column_index(position)
     return savers
 

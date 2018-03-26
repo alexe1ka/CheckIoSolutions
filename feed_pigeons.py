@@ -13,11 +13,17 @@
 
 
 def checkio(number):
-    return 0
+    sum  = 0
+    for i in range(0, number + 1):
+        sum += i
+    print("sum =  {}".format(sum))
+    return round(sum / number)
 
 
 if __name__ == '__main__':
     # These "asserts" using only for self-checking and not necessary for auto-testing
+    # print(checkio(10))
+
     assert checkio(1) == 1, "1st example"
     assert checkio(2) == 1, "2nd example"
     assert checkio(5) == 3, "3rd example"

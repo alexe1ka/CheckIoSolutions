@@ -13,4 +13,6 @@
 # Предусловия: Тут нет больших чисел.
 
 def checkio(data):
+    if len(data==1)
+    result =
     return 0

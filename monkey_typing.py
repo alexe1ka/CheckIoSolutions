@@ -10,9 +10,16 @@
 #
 # Выход: Количество слов в тексте в виде целого числа.
 
+import re
+
 
 def count_words(text, words):
-    return 0
+    words = list(words)
+    count = 0
+    for i in range(len(words)):
+        if text.lower().__contains__(words[i].lower()):
+            count += 1
+    return count
 
 
 if __name__ == '__main__':
@@ -21,4 +28,4 @@ if __name__ == '__main__':
     assert count_words("Bananas, give me bananas!!!", {"banana", "bananas"}) == 2, "BANANAS!"
     assert count_words("Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
                        {"sum", "hamlet", "infinity", "anything"}) == 1, "Weird text"
-    print("Coding complete? Click 'Check' to review your tests and earn cool rewards!")
+    # print("Coding complete? Click 'Check' to review your tests and earn cool rewards!")

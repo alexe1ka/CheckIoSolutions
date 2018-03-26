@@ -4,11 +4,13 @@
 # нижнем регистре.Пароль может содержать только
 # латинские буквы и / или цифры.
 
+import re
+
 
 def checkio(data):
     # replace this for solution
-
-    return True or False
+    return len(data) > 10 and bool(re.search("\d", data)) and bool(re.search("\d", data)) and bool(
+        re.search("[A-Z]", data)) and bool(re.search("[a-z]", data))
 
 
 # Some hints
@@ -17,6 +19,9 @@ def checkio(data):
 
 if __name__ == '__main__':
     # These "asserts" using only for self-checking and not necessary for auto-testing
+    # print(checkio('A1213pokl'))
+    # print(checkio('bAse730onE4'))
+
     assert checkio('A1213pokl') == False, "1st example"
     assert checkio('bAse730onE4') == True, "2nd example"
     assert checkio('asasasasasasasaas') == False, "3rd example"
