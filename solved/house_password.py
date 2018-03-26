@@ -9,7 +9,7 @@ import re
 
 def checkio(data):
     # replace this for solution
-    return len(data) > 10 and bool(re.search("\d", data)) and bool(re.search("\d", data)) and bool(
+    return len(data) >= 10 and bool(re.search("\d", data)) and bool(re.search("\d", data)) and bool(
         re.search("[A-Z]", data)) and bool(re.search("[a-z]", data))
 
 
