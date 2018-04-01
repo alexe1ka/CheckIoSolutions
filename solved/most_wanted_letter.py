@@ -14,17 +14,27 @@
 # Предусловия:
 # text содержит только ASCII символы.
 # 0 < len(text) ≤ 105
+import re
 
 
 def checkio(text):
     # replace this for solution
-    return 'a'
+    clean_lst_with_letters = list(filter(None, [re.sub(r'[^A-Za-z]+', '', x) for x in sorted(text.lower())]))
+    res_let = ""
+    max_let_cnt = 0
+    for let in sorted(set(clean_lst_with_letters)):
+        count = clean_lst_with_letters.count(let)
+        if count > max_let_cnt:
+            max_let_cnt = count
+            res_let = let
+    return res_let
 
 
 if __name__ == '__main__':
     # These "asserts" using only for self-checking and not necessary for auto-testing
-    assert checkio("Hello World!") == "l", "Hello test"
-    assert checkio("How do you do?") == "o", "O is most wanted"
+    # assert checkio("Hello World!") == "l", "Hello test"
+    # assert checkio("How do you do?") == "o", "O is most wanted"
+
     assert checkio("One") == "e", "All letter only once."
     assert checkio("Oops!") == "o", "Don't forget about lower case."
     assert checkio("AAaooo!!!!") == "a", "Only letters."
