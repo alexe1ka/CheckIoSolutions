@@ -13,6 +13,13 @@
 # Предусловия: Тут нет больших чисел.
 
 def checkio(data):
-    if len(data==1)
-    result =
-    return 0
+    if len(data) == 1:
+        return data[0]
+    else:
+        return data[0] + checkio(data[1:])
+
+
+print(checkio([2, 2, 2, 2, 2, 2]))
+
+# sum([1, 2, 3]) == 6
+# sum([2, 2, 2, 2, 2, 2]) == 12
