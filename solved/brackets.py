@@ -16,20 +16,16 @@
 
 
 def checkio(expression):
-    brackets = get_brackets(expression)
-    if len(brackets) % 2 != 0:
-        return False
-    else:
-        for i in range(3):
-            if brackets.__contains__("()") or brackets.__contains__("{}") or brackets.__contains__("[]"):
-                print(brackets)
-                brackets.replace("()", "11")
-                # brackets.replace("{}", "")
-                # brackets.replace("[]", "")
-            if len(brackets) == 0:
-                break
-        print(brackets)
+    brackets = str(get_brackets(expression))
+    symbols = ["()", "[]", "{}"]
+    for i in range(int(len(brackets) / 2)):
+        for symbol in symbols:
+            if str(symbol) in brackets:
+                brackets = brackets.replace(symbol, "")
+    if len(brackets) == 0:
         return True
+    else:
+        return False
 
 
 def get_brackets(expression):
@@ -42,9 +38,9 @@ def get_brackets(expression):
 if __name__ == '__main__':
     # print(checkio("(3+{1-1)}"))
     print(checkio("{[(3+1)+2]+}"))
-    # assert checkio("((5+3)*2+1)") == True, "Simple"
-    # assert checkio("{[(3+1)+2]+}") == True, "Different types"
-    # assert checkio("(3+{1-1)}") == False, ") is alone inside {}"
-    # assert checkio("[1+1]+(2*2)-{3/3}") == True, "Different operators"
-    # assert checkio("(({[(((1)-2)+3)-3]/3}-3)") == False, "One is redundant"
-    # assert checkio("2+3") == True, "No brackets, no problem"
+    assert checkio("((5+3)*2+1)") == True, "Simple"
+    assert checkio("{[(3+1)+2]+}") == True, "Different types"
+    assert checkio("(3+{1-1)}") == False, ") is alone inside {}"
+    assert checkio("[1+1]+(2*2)-{3/3}") == True, "Different operators"
+    assert checkio("(({[(((1)-2)+3)-3]/3}-3)") == False, "One is redundant"
+    assert checkio("2+3") == True, "No brackets, no problem"
